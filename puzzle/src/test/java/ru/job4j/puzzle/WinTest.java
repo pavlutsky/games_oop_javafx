@@ -6,7 +6,6 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-@Ignore
 public class WinTest {
     @Test
     public void whenVerticalWin() {
@@ -16,6 +15,18 @@ public class WinTest {
                 {0, 0, 1, 0, 0},
                 {0, 0, 1, 0, 0},
                 {0, 0, 1, 0, 0},
+        };
+        assertThat(Win.check(board), is(true));
+    }
+
+    @Test
+    public void whenVerticalWin3() {
+        int[][] board = {
+                {0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0},
         };
         assertThat(Win.check(board), is(true));
     }
